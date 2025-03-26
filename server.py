@@ -17,7 +17,6 @@ def compile_latex():
     if file.filename == "" or not file.filename.endswith(".zip"):
         return jsonify({"error": "Invalid file type. Please upload a ZIP file."}), 400
 
-    # Create a temporary directory
     temp_dir = tempfile.mkdtemp()
 
     zip_path = os.path.join(temp_dir, secure_filename(file.filename))
@@ -30,13 +29,10 @@ def compile_latex():
     except zipfile.BadZipFile:
         return jsonify({"error": "Invalid ZIP file"}), 400
 
-    # Find the main LaTeX file (assume it's the first .tex file found)
-    tex_files = [f for f in os.listdir(temp_dir) if f.endswith(".tex")]
-    if not tex_files:
-        return jsonify({"error": "No LaTeX file found in the ZIP"}), 400
-
-    tex_file = tex_files[0]  # Use the first .tex file found
+    tex_file = "document.tex"
     tex_path = os.path.join(temp_dir, tex_file)
+    if not os.path.exists(tex_path):
+        return jsonify({"error": "No document.tex found in the ZIP file"}), 400
     pdf_name = tex_file.rsplit(".", 1)[0] + ".pdf"
     pdf_path = os.path.join(temp_dir, pdf_name)
 

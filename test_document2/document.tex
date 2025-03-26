@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{fancyhdr} % For custom headers/footers
+\usepackage{graphicx} % For centering the table
+\usepackage{array}    % For better table formatting
+
+\pagestyle{fancy} % Enable custom headers and footers
+\fancyhf{} % Clear default header/footer
+\fancyfoot[C]{\thepage} % Center footer with page number
+\fancyfoot[L]{My Custom Footer} % Left-aligned text in footer
+
+\begin{document}
+
+\section{Introduction}
+
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis
+facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta
+vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.
+Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis
+varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit,
+ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur
+vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna
+orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis
+est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam vel
+tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac
+leo mollis blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu,
+wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui in ligula
+mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce
+commodo.  Vestibulum convallis, lorem a tempus semper, dui dui euismod elit,
+vitae placerat urna tortor vitae lacus.  Nullam libero mauris, consequat quis,
+varius et, dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat
+tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus
+lacinia purus, et dictum nunc justo sit amet elit.
+
+\newpage
+
+\section{What this is}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit
+tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et,
+mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae
+dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.
+Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{cat.jpg} % Adjust width here
+    \caption{Your best friend}
+    \label{fig:example}
+\end{figure}
+
+\include{chapter_special_characters}
+
+\section{Sample Table}
+
+Here is a simple table:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Column 1 & Column 2 & Column 3 \\
+        \hline
+        A1 & B1 & C1 \\
+        A2 & B2 & C2 \\
+        A3 & B3 & C3 \\
+        \hline
+    \end{tabular}
+    \caption{A simple table example}
+    \label{tab:example}
+\end{table}
+
+\end{document}
