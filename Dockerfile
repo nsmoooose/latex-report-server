@@ -1,9 +1,12 @@
-FROM texlive/texlive:latest
-
-RUN apt-get update && apt-get install -y \
-    python3 python3-pip python3-flask
-
+FROM golang:1.22-alpine AS build
 WORKDIR /app
-COPY server.py /app
+COPY main.go .
+ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
+RUN go build -ldflags="-s -w" -o /out/latex-server main.go
 
-CMD ["python3", "server.py"]
+# FROM texlive/texlive:latest
+# FROM texlive/texlive:latest-medium
+FROM texlive/texlive:latest-basic
+
+COPY --from=build /out/latex-server /usr/bin/latex-server
+CMD ["latex-server"]
