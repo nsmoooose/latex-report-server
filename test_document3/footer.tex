@@ -1,0 +1,21 @@
+\usepackage{fancyhdr} % For custom headers/footers
+\usepackage{graphicx}  % For centering the table
+
+\pagestyle{fancy} % Enable custom headers and footers
+\fancyhf{} % Clear default header/footer
+
+% Draw a horizontal line above the footer
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Define the footer content
+\fancyfoot[L]{%
+  \begin{tabular}[t]{@{}l@{}}
+    \small
+    My Company Name \\
+    \includegraphics[width=0.3cm]{img_phone.png} +4681798327 \\
+    \includegraphics[width=0.3cm]{img_email.png} info@mycompany.com \\
+    \includegraphics[width=0.3cm]{img_address.png} Road 123, 765 My City
+  \end{tabular}
+}
+
+\fancyfoot[C]{\thepage} % Center footer with page number

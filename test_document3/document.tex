@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article} % Set A4 page size
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm]{geometry} % Set margins
+\usepackage{graphicx}  % For centering the table
+\usepackage{array}     % For better table formatting
+\usepackage{lipsum} % for dummy text
+
+\input{footer.tex}
+
+\begin{document}
+
+\section{Sample Table}
+
+Here is a simple table:
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Column 1 & Column 2 & Column 3 \\
+    \hline
+    A1 & B1 & C1 \\
+    A2 & B2 & C2 \\
+    A3 & B3 & C3 \\
+    \hline
+  \end{tabular}
+  \caption{A simple table example}
+  \label{tab:example}
+\end{table}
+
+\lipsum[1-5]
+
+\end{document}
